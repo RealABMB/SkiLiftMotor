@@ -2,7 +2,7 @@ const int trigPin1 =10;
 const int echoPin1 = 9;
 const int trigPin2 = 4;
 const int echoPin2 = 2;
-const int enA = 8 ;
+const int enA = 5 ;
 const int m1 = 7;
 const int m2 = 6;
 
@@ -42,7 +42,8 @@ void loop() {
 void motorOn(){
   analogWrite(enA, 200);
   digitalWrite(m1, HIGH);
-  delay(10000);
+  delay(7000);
+  analogWrite(enA, 140);
   stopSensor();
   
 }
@@ -59,7 +60,7 @@ void sensorControl(){
 
   distance = duration * 0.034 / 2;
   
-  if (distance > 10 || distance < 6){
+  if (distance > 35 || distance < 2.5){
     ballRolled ++;
 
     if (ballRolled == 2){
@@ -87,10 +88,10 @@ void stopSensor(){
     distance2 = duration2 * 0.034 / 2;
     Serial.println(distance2);
 
-    if (distance2 > 2 && distance2 < 10){
+    if (distance2 > 1 && distance2 < 10){
       cartArrive ++;
 
-      if (cartArrive == 2){
+      if (cartArrive == 1){
         cartArrive = 0;
         //sensorOn = false; 
         delay(200);
