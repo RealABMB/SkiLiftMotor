@@ -42,7 +42,7 @@ void loop() {
 void motorOn(){
   analogWrite(enA, 200);
   digitalWrite(m1, HIGH);
-  delay(7000);
+  delay(10000);
   stopSensor();
   
 }
@@ -62,7 +62,7 @@ void sensorControl(){
   if (distance > 10 || distance < 6){
     ballRolled ++;
 
-    if (ballRolled == 4){
+    if (ballRolled == 2){
       ballRolled = 0;
       //sensorOn = false;
       Serial.println(distance);
@@ -90,7 +90,7 @@ void stopSensor(){
     if (distance2 > 2 && distance2 < 10){
       cartArrive ++;
 
-      if (cartArrive == 3){
+      if (cartArrive == 2){
         cartArrive = 0;
         //sensorOn = false; 
         delay(200);
