@@ -14,7 +14,7 @@ int ballRolled;
 int cartArrive;
 
 //bool sensorOn = true;
-
+//Turn on later
 const long motorWaitTime = 15000;
 
 void setup() {
